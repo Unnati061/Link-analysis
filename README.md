@@ -329,7 +329,7 @@ The following illustrative response shows the response shape; competitor entries
 pytest tests/ -v
 ```
 
-The latest test run is recorded in [verification/test-results.txt](verification/test-results.txt). The suite uses mocked LLM responses; the configured Gemini project currently has zero Generate Content quota, so a real provider request returns HTTP 502 until quota is enabled or a working provider key is configured. See [verification/live-check.md](verification/live-check.md).
+The latest test run is recorded in [verification/test-results.txt](verification/test-results.txt). The suite uses mocked LLM responses. The original local Gemini project had no usable request quota; a replacement key was later verified with a live structured JSON request and must be configured as `GEMINI_API_KEY` in the deployment dashboard. See [verification/live-check.md](verification/live-check.md).
 
 ---
 
