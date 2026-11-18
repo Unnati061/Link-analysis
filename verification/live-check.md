@@ -9,3 +9,13 @@ Date: 18 November 2026
 - A replacement Gemini key was subsequently verified with a minimal live structured JSON request using `gemini-3.1-flash-lite`. The key value is not recorded in this repository and must be configured in the deployment dashboard.
 
 The unit suite in [test-results.txt](test-results.txt) uses mocked LLM output for its success path. Repeat the full live analysis check after configuring the verified provider key in the deployment dashboard.
+
+## Render Deployment Verification
+
+Date: 18 November 2026
+
+- Live demo: https://link-analysis-api.onrender.com/
+- API documentation: https://link-analysis-api.onrender.com/docs
+- `GET /` returned HTTP 200 with `status: ok`.
+- `GET /docs` returned HTTP 200.
+- `POST /link-analysis` with `https://example.com` returned HTTP 200 and a structured response with 5 search queries, 5 services, and 2 audience segments using `gemini-3.1-flash-lite`.

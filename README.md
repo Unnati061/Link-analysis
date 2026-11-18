@@ -344,6 +344,12 @@ The latest test run is recorded in [verification/test-results.txt](verification/
 
 ## Deployment
 
+**Live demo:** https://link-analysis-api.onrender.com/
+
+**API documentation:** https://link-analysis-api.onrender.com/docs
+
+**Analysis endpoint:** `POST https://link-analysis-api.onrender.com/link-analysis`
+
 The repository includes `render.yaml`, which creates a Render web service with a health check at `/`. In Render, create a Blueprint from this repository and provide `GEMINI_API_KEY` when prompted. Do not paste API keys into GitHub or `render.yaml`.
 
 After deployment, use these URLs in the submission:
@@ -382,7 +388,7 @@ Or use a free hosting platform:
 - [x] Unit tests
 - [x] README with setup instructions and sample API request/response
 - [x] LLM comparison and recommendation (provider list prices and assumptions documented)
-- [ ] Deploy to public server and add live URL here
+- [x] Deploy to Render — https://link-analysis-api.onrender.com/
 - [x] Add test and live-check logs in `verification/`
 
 ---
