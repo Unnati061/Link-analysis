@@ -139,6 +139,20 @@ The deployed application uses Google Gemini with the `gemini-3.1-flash-lite` mod
 
 Cost is controlled by extracting only relevant visible text, truncating the page content before analysis, and using a lightweight model. Model capabilities, availability, and pricing can change; refer to the [Google AI pricing page](https://ai.google.dev/gemini-api/docs/pricing) for current information.
 
+### Model selection
+
+The project considered three text models for its single-pass website analysis. Prices below are standard API prices per million text tokens, checked on 18 November 2026. Response speed and output quality have not been benchmarked in this project, so no comparative performance claim is made.
+
+| Provider | Model | Input / output | Context window | Structured JSON | Assessment for this project |
+| --- | --- | --- | --- | --- | --- |
+| Google | `gemini-3.1-flash-lite` | $0.25 / $1.50 | 1M tokens | Native JSON response mode | Selected: low-cost, long-context structured extraction. |
+| OpenAI | `gpt-6-luna` | $0.10 / $0.50 | 1.05M tokens | Structured outputs | Alternative for a cost-sensitive, high-volume workload. |
+| Anthropic | `claude-haiku-4-5-20251001` | $1.00 / $5.00 | 200K tokens | Structured outputs | Viable alternative, but higher token cost and smaller context for this use case. |
+
+Gemini is the configured provider because its structured output, 1M-token context window, and lightweight pricing suit bounded website-content analysis. A representative labelled evaluation set should be used before making accuracy or latency claims. The current prompt provides the model's recommendation and names a fallback option, but inferred business insights remain marked as AI suggestions.
+
+Current provider references: [Gemini pricing](https://ai.google.dev/gemini-api/docs/pricing), [OpenAI GPT-6 Luna](https://developers.openai.com/api/docs/models/gpt-6-luna), and [Claude Haiku 4.5](https://platform.claude.com/docs/en/models/haiku-4-5/overview).
+
 ## Security safeguards
 
 - Accepts only `http` and `https` URLs.
