@@ -1,0 +1,33 @@
+D:\Dxora crest python assignment\.venv\Lib\site-packages\pytest_asyncio\plugin.py:208: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+============================= test session starts =============================
+platform win32 -- Python 3.12.6, pytest-8.3.4, pluggy-1.7.0 -- D:\Dxora crest python assignment\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\Dxora crest python assignment
+plugins: anyio-4.16.0, asyncio-0.24.0
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collecting ... collected 13 items
+
+tests/test_link_analysis.py::test_root PASSED                            [  7%]
+tests/test_link_analysis.py::test_missing_url PASSED                     [ 15%]
+tests/test_link_analysis.py::test_invalid_url_scheme PASSED              [ 23%]
+tests/test_link_analysis.py::test_localhost_blocked PASSED               [ 30%]
+tests/test_link_analysis.py::test_private_ip_blocked PASSED              [ 38%]
+tests/test_link_analysis.py::test_internal_ip_blocked PASSED             [ 46%]
+tests/test_link_analysis.py::test_modern_long_tld_is_accepted PASSED     [ 53%]
+tests/test_link_analysis.py::test_nonstandard_port_is_rejected PASSED    [ 61%]
+tests/test_link_analysis.py::test_ipv6_loopback_is_blocked PASSED        [ 69%]
+tests/test_link_analysis.py::test_redirect_to_local_address_is_blocked PASSED [ 76%]
+tests/test_link_analysis.py::test_successful_analysis PASSED             [ 84%]
+tests/test_link_analysis.py::test_inaccessible_website PASSED            [ 92%]
+tests/test_link_analysis.py::test_provider_failure_is_sanitized PASSED   [100%]
+
+============================== warnings summary ===============================
+.venv\Lib\site-packages\starlette\testclient.py:40
+  D:\Dxora crest python assignment\.venv\Lib\site-packages\starlette\testclient.py:40: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 13 passed, 1 warning in 1.58s ========================
